@@ -13,20 +13,23 @@
 // do the same for food recipes API
 // what data points are we going to keep? posters? details form the fetch request. how to render those in our html
 
+
+
 var genre = "/chart/popular/genre/family";
 
-    $.ajax("https://imdb8.p.rapidapi.com/title/get-popular-movies-by-genre?genre=" + genre, {
+async function genreRequest(genre){
+    await $.ajax("https://imdb8.p.rapidapi.com/title/get-popular-movies-by-genre?genre=" + genre, {
     "method": "GET",
     "headers": {
     "x-rapidapi-host": "imdb8.p.rapidapi.com",
     "x-rapidapi-key": "6367609f03mshe6a3e9c1f4e6ba0p12185cjsn01a783ae2181"
     }
     })
-    .then(response2 => {
+    .then(async response2 => {
     console.log(response2[0]);
 
         let title = response2[8].split("/")
-        $.ajax("https://imdb8.p.rapidapi.com/title/get-details?tconst="+ title[2] +"&limit=25&region=US", {
+        await $.ajax("https://imdb8.p.rapidapi.com/title/get-details?tconst="+ title[2] +"&limit=25&region=US", {
             "method": "GET",
             "headers": {
             "x-rapidapi-host": "imdb8.p.rapidapi.com",
@@ -41,269 +44,133 @@ var genre = "/chart/popular/genre/family";
             console.error(err);
         });
     })
-.catch(err => {
-console.error(err);
+    .catch(err => {
+    console.error(err);
 });
+}
+genreRequest("/chart/popular/genre/family");
+genreRequest("/chart/popular/genre/musical");
+// genreRequest("/chart/popular/genre/comedy");
+// genreRequest("/chart/popular/genre/mystery");
+// genreRequest("/chart/popular/genre/thriller");
+// genreRequest("/chart/popular/genre/drama");
+// genreRequest("/chart/popular/genre/mystery");
+// genreRequest("/chart/popular/genre/mystery");
 
-var genre = "/chart/popular/genre/musical";
 
-    $.ajax("https://imdb8.p.rapidapi.com/title/get-popular-movies-by-genre?genre=" + genre, {
-    "method": "GET",
-    "headers": {
-    "x-rapidapi-host": "imdb8.p.rapidapi.com",
-    "x-rapidapi-key": "6367609f03mshe6a3e9c1f4e6ba0p12185cjsn01a783ae2181"
-    }
-    })
-    .then(response2 => {
-    console.log(response2[0]);
 
-        let title = response2[8].split("/")
-        $.ajax("https://imdb8.p.rapidapi.com/title/get-details?tconst="+ title[2] +"&limit=25&region=US", {
-            "method": "GET",
-            "headers": {
-            "x-rapidapi-host": "imdb8.p.rapidapi.com",
-            "x-rapidapi-key": "6367609f03mshe6a3e9c1f4e6ba0p12185cjsn01a783ae2181"
-            }
-        })
-        .then(response3 => {
-            console.log(response3);
+// var genre = "/chart/popular/genre/comedy";
 
-        })
-        .catch(err => {
-            console.error(err);
-        });
-    })
-.catch(err => {
-console.error(err);
-});
+//     $.ajax("https://imdb8.p.rapidapi.com/title/get-popular-movies-by-genre?genre=" + genre, {
+//     "method": "GET",
+//     "headers": {
+//     "x-rapidapi-host": "imdb8.p.rapidapi.com",
+//     "x-rapidapi-key": "6367609f03mshe6a3e9c1f4e6ba0p12185cjsn01a783ae2181"
+//     }
+//     })
+//     .then(response2 => {
+//     console.log(response2[0]);
 
-var genre = "/chart/popular/genre/comedy";
+//         let title = response2[8].split("/")
+//         $.ajax("https://imdb8.p.rapidapi.com/title/get-details?tconst="+ title[2] +"&limit=25&region=US", {
+//             "method": "GET",
+//             "headers": {
+//             "x-rapidapi-host": "imdb8.p.rapidapi.com",
+//             "x-rapidapi-key": "6367609f03mshe6a3e9c1f4e6ba0p12185cjsn01a783ae2181"
+//             }
+//         })
+//         .then(response3 => {
+//             console.log(response3);
 
-    $.ajax("https://imdb8.p.rapidapi.com/title/get-popular-movies-by-genre?genre=" + genre, {
-    "method": "GET",
-    "headers": {
-    "x-rapidapi-host": "imdb8.p.rapidapi.com",
-    "x-rapidapi-key": "6367609f03mshe6a3e9c1f4e6ba0p12185cjsn01a783ae2181"
-    }
-    })
-    .then(response2 => {
-    console.log(response2[0]);
+//         })
+//         .catch(err => {
+//             console.error(err);
+//         });
+//     })
 
-        let title = response2[8].split("/")
-        $.ajax("https://imdb8.p.rapidapi.com/title/get-details?tconst="+ title[2] +"&limit=25&region=US", {
-            "method": "GET",
-            "headers": {
-            "x-rapidapi-host": "imdb8.p.rapidapi.com",
-            "x-rapidapi-key": "6367609f03mshe6a3e9c1f4e6ba0p12185cjsn01a783ae2181"
-            }
-        })
-        .then(response3 => {
-            console.log(response3);
+// var genre = "/chart/popular/genre/fantasy";
 
-        })
-        .catch(err => {
-            console.error(err);
-        });
-    })
+//     $.ajax("https://imdb8.p.rapidapi.com/title/get-popular-movies-by-genre?genre=" + genre, {
+//     "method": "GET",
+//     "headers": {
+//     "x-rapidapi-host": "imdb8.p.rapidapi.com",
+//     "x-rapidapi-key": "6367609f03mshe6a3e9c1f4e6ba0p12185cjsn01a783ae2181"
+//     }
+//     })
+//     .then(response2 => {
+//     console.log(response2[0]);
 
-var genre = "/chart/popular/genre/mystery";
+//         let title = response2[8].split("/")
+//         $.ajax("https://imdb8.p.rapidapi.com/title/get-details?tconst="+ title[2] +"&limit=25&region=US", {
+//             "method": "GET",
+//             "headers": {
+//             "x-rapidapi-host": "imdb8.p.rapidapi.com",
+//             "x-rapidapi-key": "6367609f03mshe6a3e9c1f4e6ba0p12185cjsn01a783ae2181"
+//             }
+//         })
+//         .then(response3 => {
+//             console.log(response3);
 
-    $.ajax("https://imdb8.p.rapidapi.com/title/get-popular-movies-by-genre?genre=" + genre, {
-    "method": "GET",
-    "headers": {
-    "x-rapidapi-host": "imdb8.p.rapidapi.com",
-    "x-rapidapi-key": "6367609f03mshe6a3e9c1f4e6ba0p12185cjsn01a783ae2181"
-    }
-    })
-    .then(response2 => {
-    console.log(response2[0]);
+//         })
+//         .catch(err => {
+//             console.error(err);
+//         });
+//     })
 
-        let title = response2[8].split("/")
-        $.ajax("https://imdb8.p.rapidapi.com/title/get-details?tconst="+ title[2] +"&limit=25&region=US", {
-            "method": "GET",
-            "headers": {
-            "x-rapidapi-host": "imdb8.p.rapidapi.com",
-            "x-rapidapi-key": "6367609f03mshe6a3e9c1f4e6ba0p12185cjsn01a783ae2181"
-            }
-        })
-        .then(response3 => {
-            console.log(response3);
+// var genre = "/chart/popular/genre/history";
 
-        })
-        .catch(err => {
-            console.error(err);
-        });
-    })
+//     $.ajax("https://imdb8.p.rapidapi.com/title/get-popular-movies-by-genre?genre=" + genre, {
+//     "method": "GET",
+//     "headers": {
+//     "x-rapidapi-host": "imdb8.p.rapidapi.com",
+//     "x-rapidapi-key": "6367609f03mshe6a3e9c1f4e6ba0p12185cjsn01a783ae2181"
+//     }
+//     })
+//     .then(response2 => {
+//     console.log(response2[0]);
 
-var genre = "/chart/popular/genre/thriller";
+//         let title = response2[8].split("/")
+//         $.ajax("https://imdb8.p.rapidapi.com/title/get-details?tconst="+ title[2] +"&limit=25&region=US", {
+//             "method": "GET",
+//             "headers": {
+//             "x-rapidapi-host": "imdb8.p.rapidapi.com",
+//             "x-rapidapi-key": "6367609f03mshe6a3e9c1f4e6ba0p12185cjsn01a783ae2181"
+//             }
+//         })
+//         .then(response3 => {
+//             console.log(response3);
 
-    $.ajax("https://imdb8.p.rapidapi.com/title/get-popular-movies-by-genre?genre=" + genre, {
-    "method": "GET",
-    "headers": {
-    "x-rapidapi-host": "imdb8.p.rapidapi.com",
-    "x-rapidapi-key": "6367609f03mshe6a3e9c1f4e6ba0p12185cjsn01a783ae2181"
-    }
-    })
-    .then(response2 => {
-    console.log(response2[0]);
+//         })
+//         .catch(err => {
+//             console.error(err);
+//         });
+//     })
 
-        let title = response2[8].split("/")
-        $.ajax("https://imdb8.p.rapidapi.com/title/get-details?tconst="+ title[2] +"&limit=25&region=US", {
-            "method": "GET",
-            "headers": {
-            "x-rapidapi-host": "imdb8.p.rapidapi.com",
-            "x-rapidapi-key": "6367609f03mshe6a3e9c1f4e6ba0p12185cjsn01a783ae2181"
-            }
-        })
-        .then(response3 => {
-            console.log(response3);
+//     var genre = "/chart/popular/genre/horror";
 
-        })
-        .catch(err => {
-            console.error(err);
-        });
-    })
-var genre = "/chart/popular/genre/drama";
+//     $.ajax("https://imdb8.p.rapidapi.com/title/get-popular-movies-by-genre?genre=" + genre, {
+//     "method": "GET",
+//     "headers": {
+//     "x-rapidapi-host": "imdb8.p.rapidapi.com",
+//     "x-rapidapi-key": "6367609f03mshe6a3e9c1f4e6ba0p12185cjsn01a783ae2181"
+//     }
+//     })
+//     .then(response2 => {
+//     console.log(response2[0]);
 
-    $.ajax("https://imdb8.p.rapidapi.com/title/get-popular-movies-by-genre?genre=" + genre, {
-    "method": "GET",
-    "headers": {
-    "x-rapidapi-host": "imdb8.p.rapidapi.com",
-    "x-rapidapi-key": "6367609f03mshe6a3e9c1f4e6ba0p12185cjsn01a783ae2181"
-    }
-    })
-    .then(response2 => {
-    console.log(response2[0]);
+//         let title = response2[8].split("/")
+//         $.ajax("https://imdb8.p.rapidapi.com/title/get-details?tconst="+ title[2] +"&limit=25&region=US", {
+//             "method": "GET",
+//             "headers": {
+//             "x-rapidapi-host": "imdb8.p.rapidapi.com",
+//             "x-rapidapi-key": "6367609f03mshe6a3e9c1f4e6ba0p12185cjsn01a783ae2181"
+//             }
+//         })
+//         .then(response3 => {
+//             console.log(response3);
 
-        let title = response2[8].split("/")
-        $.ajax("https://imdb8.p.rapidapi.com/title/get-details?tconst="+ title[2] +"&limit=25&region=US", {
-            "method": "GET",
-            "headers": {
-            "x-rapidapi-host": "imdb8.p.rapidapi.com",
-            "x-rapidapi-key": "6367609f03mshe6a3e9c1f4e6ba0p12185cjsn01a783ae2181"
-            }
-        })
-        .then(response3 => {
-            console.log(response3);
-
-        })
-        .catch(err => {
-            console.error(err);
-        });
-    })
-
-var genre = "/chart/popular/genre/comedy";
-
-    $.ajax("https://imdb8.p.rapidapi.com/title/get-popular-movies-by-genre?genre=" + genre, {
-    "method": "GET",
-    "headers": {
-    "x-rapidapi-host": "imdb8.p.rapidapi.com",
-    "x-rapidapi-key": "6367609f03mshe6a3e9c1f4e6ba0p12185cjsn01a783ae2181"
-    }
-    })
-    .then(response2 => {
-    console.log(response2[0]);
-
-        let title = response2[8].split("/")
-        $.ajax("https://imdb8.p.rapidapi.com/title/get-details?tconst="+ title[2] +"&limit=25&region=US", {
-            "method": "GET",
-            "headers": {
-            "x-rapidapi-host": "imdb8.p.rapidapi.com",
-            "x-rapidapi-key": "6367609f03mshe6a3e9c1f4e6ba0p12185cjsn01a783ae2181"
-            }
-        })
-        .then(response3 => {
-            console.log(response3);
-
-        })
-        .catch(err => {
-            console.error(err);
-        });
-    })
-
-var genre = "/chart/popular/genre/fantasy";
-
-    $.ajax("https://imdb8.p.rapidapi.com/title/get-popular-movies-by-genre?genre=" + genre, {
-    "method": "GET",
-    "headers": {
-    "x-rapidapi-host": "imdb8.p.rapidapi.com",
-    "x-rapidapi-key": "6367609f03mshe6a3e9c1f4e6ba0p12185cjsn01a783ae2181"
-    }
-    })
-    .then(response2 => {
-    console.log(response2[0]);
-
-        let title = response2[8].split("/")
-        $.ajax("https://imdb8.p.rapidapi.com/title/get-details?tconst="+ title[2] +"&limit=25&region=US", {
-            "method": "GET",
-            "headers": {
-            "x-rapidapi-host": "imdb8.p.rapidapi.com",
-            "x-rapidapi-key": "6367609f03mshe6a3e9c1f4e6ba0p12185cjsn01a783ae2181"
-            }
-        })
-        .then(response3 => {
-            console.log(response3);
-
-        })
-        .catch(err => {
-            console.error(err);
-        });
-    })
-
-var genre = "/chart/popular/genre/history";
-
-    $.ajax("https://imdb8.p.rapidapi.com/title/get-popular-movies-by-genre?genre=" + genre, {
-    "method": "GET",
-    "headers": {
-    "x-rapidapi-host": "imdb8.p.rapidapi.com",
-    "x-rapidapi-key": "6367609f03mshe6a3e9c1f4e6ba0p12185cjsn01a783ae2181"
-    }
-    })
-    .then(response2 => {
-    console.log(response2[0]);
-
-        let title = response2[8].split("/")
-        $.ajax("https://imdb8.p.rapidapi.com/title/get-details?tconst="+ title[2] +"&limit=25&region=US", {
-            "method": "GET",
-            "headers": {
-            "x-rapidapi-host": "imdb8.p.rapidapi.com",
-            "x-rapidapi-key": "6367609f03mshe6a3e9c1f4e6ba0p12185cjsn01a783ae2181"
-            }
-        })
-        .then(response3 => {
-            console.log(response3);
-
-        })
-        .catch(err => {
-            console.error(err);
-        });
-    })
-
-    var genre = "/chart/popular/genre/horror";
-
-    $.ajax("https://imdb8.p.rapidapi.com/title/get-popular-movies-by-genre?genre=" + genre, {
-    "method": "GET",
-    "headers": {
-    "x-rapidapi-host": "imdb8.p.rapidapi.com",
-    "x-rapidapi-key": "6367609f03mshe6a3e9c1f4e6ba0p12185cjsn01a783ae2181"
-    }
-    })
-    .then(response2 => {
-    console.log(response2[0]);
-
-        let title = response2[8].split("/")
-        $.ajax("https://imdb8.p.rapidapi.com/title/get-details?tconst="+ title[2] +"&limit=25&region=US", {
-            "method": "GET",
-            "headers": {
-            "x-rapidapi-host": "imdb8.p.rapidapi.com",
-            "x-rapidapi-key": "6367609f03mshe6a3e9c1f4e6ba0p12185cjsn01a783ae2181"
-            }
-        })
-        .then(response3 => {
-            console.log(response3);
-
-        })
-        .catch(err => {
-            console.error(err);
-        });
-    })
+//         })
+//         .catch(err => {
+//             console.error(err);
+//         });
+//     })
