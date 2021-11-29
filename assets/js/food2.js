@@ -1,3 +1,22 @@
+// /* Drop Down Menu for Moods*/
+// function myFunction() {
+//   document.getElementById("myDropdown").classList.toggle("show");
+// }
+
+// // Dropdown menu closes if user clicks outside of it
+// window.onclick = function(event) {
+//   if (!event.target.matches('.dropbtn')) {
+//     var dropdowns = document.getElementsByClassName("dropdown-content");
+//     var i;
+//     for (i = 0; i < dropdowns.length; i++) {
+//       var openDropdown = dropdowns[i];
+//       if (openDropdown.classList.contains('show')) {
+//         openDropdown.classList.remove('show');
+//       }
+//     }
+//   }
+// }
+
 var genre = "/chart/popular/genre/horror";
 
 $.ajax(
@@ -85,21 +104,21 @@ function fetchRecipes(ingredient) {
     });
 }
 
-/* Drop Down Menu for Moods*/
-function myFunction() {
-    document.getElementById("myDropdown").classList.toggle("show");
-  }
+// /* Drop Down Menu for Moods*/
+// function myFunction() {
+//     document.getElementById("myDropdown").classList.toggle("show");
+//   }
   
-  // Dropdown menu closes if user clicks outside of it
-  window.onclick = function(event) {
-    if (!event.target.matches('.dropbtn')) {
-      var dropdowns = document.getElementsByClassName("dropdown-content");
-      var i;
-      for (i = 0; i < dropdowns.length; i++) {
-        var openDropdown = dropdowns[i];
-        if (openDropdown.classList.contains('show')) {
-          openDropdown.classList.remove('show');
-        }
-      }
-    }
-  }
+//   // Dropdown menu closes if user clicks outside of it
+//   window.onclick = function(event) {
+//     if (!event.target.matches('.dropbtn')) {
+//       var dropdowns = document.getElementsByClassName("dropdown-content");
+//       var i;
+//       for (i = 0; i < dropdowns.length; i++) {
+//         var openDropdown = dropdowns[i];
+//         if (openDropdown.classList.contains('show')) {
+//           openDropdown.classList.remove('show');
+//         }
+//       }
+//     }
+//   }

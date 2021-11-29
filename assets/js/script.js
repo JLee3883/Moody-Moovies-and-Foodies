@@ -126,7 +126,7 @@ var genre = "/chart/popular/genre/horror";
     "method": "GET",
     "headers": {
     "x-rapidapi-host": "imdb8.p.rapidapi.com",
-    "x-rapidapi-key": "307037ba87msh679b27d5898dc92p15467bjsnd808822351aa"
+    "x-rapidapi-key": "6367609f03mshe6a3e9c1f4e6ba0p12185cjsn01a783ae2181"
     }
     })
     .then(response2 => {
@@ -139,7 +139,7 @@ var genre = "/chart/popular/genre/horror";
             "method": "GET",
             "headers": {
             "x-rapidapi-host": "imdb8.p.rapidapi.com",
-            "x-rapidapi-key": "307037ba87msh679b27d5898dc92p15467bjsnd808822351aa"
+            "x-rapidapi-key": "6367609f03mshe6a3e9c1f4e6ba0p12185cjsn01a783ae2181"
             }
         })
         .then(response3 => {
@@ -174,7 +174,7 @@ var genre = "/chart/popular/genre/romance";
     "method": "GET",
     "headers": {
     "x-rapidapi-host": "imdb8.p.rapidapi.com",
-    "x-rapidapi-key": "307037ba87msh679b27d5898dc92p15467bjsnd808822351aa"
+    "x-rapidapi-key": "6367609f03mshe6a3e9c1f4e6ba0p12185cjsn01a783ae2181"
     }
     })
     .then(response2 => {
@@ -187,7 +187,7 @@ var genre = "/chart/popular/genre/romance";
             "method": "GET",
             "headers": {
             "x-rapidapi-host": "imdb8.p.rapidapi.com",
-            "x-rapidapi-key": "307037ba87msh679b27d5898dc92p15467bjsnd808822351aa"
+            "x-rapidapi-key": "6367609f03mshe6a3e9c1f4e6ba0p12185cjsn01a783ae2181"
             }
         })
         .then(response3 => {
@@ -208,7 +208,7 @@ var genre = "/chart/popular/genre/action";
     "method": "GET",
     "headers": {
     "x-rapidapi-host": "imdb8.p.rapidapi.com",
-    "x-rapidapi-key": "307037ba87msh679b27d5898dc92p15467bjsnd808822351aa"
+    "x-rapidapi-key": "6367609f03mshe6a3e9c1f4e6ba0p12185cjsn01a783ae2181"
     }
     })
     .then(response2 => {
@@ -221,7 +221,7 @@ var genre = "/chart/popular/genre/action";
             "method": "GET",
             "headers": {
             "x-rapidapi-host": "imdb8.p.rapidapi.com",
-            "x-rapidapi-key": "307037ba87msh679b27d5898dc92p15467bjsnd808822351aa"
+            "x-rapidapi-key": "6367609f03mshe6a3e9c1f4e6ba0p12185cjsn01a783ae2181"
             }
         })
         .then(response3 => {
@@ -235,3 +235,22 @@ var genre = "/chart/popular/genre/action";
 .catch(err => {
 console.error(err);
 });
+
+/* Drop Down Menu for Moods*/
+function myFunction() {
+    document.getElementById("myDropdown").classList.toggle("show");
+  }
+  
+  // Dropdown menu closes if user clicks outside of it
+  window.onclick = function(event) {
+    if (!event.target.matches('.dropbtn')) {
+      var dropdowns = document.getElementsByClassName("dropdown-content");
+      var i;
+      for (i = 0; i < dropdowns.length; i++) {
+        var openDropdown = dropdowns[i];
+        if (openDropdown.classList.contains('show')) {
+          openDropdown.classList.remove('show');
+        }
+      }
+    }
+  }
