@@ -25,12 +25,18 @@ function toggleTense() {
     }
     else {
         genreRequest("/chart/popular/genre/family");
+        myTense.style.display = 'block';
+        myTense.classList.add("show");
+        myTense.classList.remove("hide");
         genreRequest("/chart/popular/genre/musical");
+        myTense.style.display = 'block';
+        myTense.classList.add("show");
+        myTense.classList.remove("hide");
         genreRequest("/chart/popular/genre/comedy");
         myTense.style.display = 'block';
         myTense.classList.add("show");
         myTense.classList.remove("hide");
-    //   tenseButton.innerHTML = 'Hide tense cards';
+    
     }
 }
 
