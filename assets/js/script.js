@@ -25,6 +25,8 @@ function toggleTense() {
     }
     else {
         genreRequest("/chart/popular/genre/family");
+        genreRequest("/chart/popular/genre/musical");
+        genreRequest("/chart/popular/genre/comedy");
         myTense.style.display = 'block';
         myTense.classList.add("show");
         myTense.classList.remove("hide");
@@ -43,9 +45,10 @@ function toggleTense() {
 //         myIrritate.classList.remove("show");     
 //     }
 //     else {
-//         myIrritate.style.display = 'block';
-//         myIrritate.classList.add("show");
-//         myIrritate.classList.remove("hide");
+            // genreRequest("/chart/popular/genre/family");
+//          myIrritate.style.display = 'block';
+//          myIrritate.classList.add("show");
+//          myIrritate.classList.remove("hide");
     
 //     }
 // }
