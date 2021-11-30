@@ -12,7 +12,7 @@
 // do the same for food recipes API
 // what data points are we going to keep? posters? details form the fetch request. how to render those in our html
 
-function toggletense() {
+function toggleTense() {
     var myTense = document.getElementById('tense');
     var displaySetting = myTense.style.display;
     console.log(displaySetting);
@@ -28,6 +28,127 @@ function toggletense() {
       myTense.classList.add("show");
       myTense.classList.remove("hide");
     //   tenseButton.innerHTML = 'Hide tense cards';
+    }
+}
+
+function toggleIrritated() {
+    var myIrritate = document.getElementById('irritated');
+    var displaySetting = myIrritate.style.display;
+    console.log(displaySetting);
+   
+    if (displaySetting == 'block') {
+        myIrritate.style.display = 'none';
+        myIrritate.classList.add("hide");
+        myIrritate.classList.remove("show");     
+    }
+    else {
+        myIrritate.style.display = 'block';
+        myIrritate.classList.add("show");
+        myIrritate.classList.remove("hide");
+    
+    }
+}
+
+function toggleRelax() {
+    var myRelax = document.getElementById('relax');
+    var displaySetting = myRelax.style.display;
+    console.log(displaySetting);
+   
+    if (displaySetting == 'block') {
+        myRelax.style.display = 'none';
+        myRelax.classList.add("hide");
+        myRelax.classList.remove("show");     
+    }
+    else {
+        myRelax.style.display = 'block';
+        myRelax.classList.add("show");
+        myRelax.classList.remove("hide");
+
+    }
+}
+
+function toggleDare() {
+    var myDare = document.getElementById('dare');
+    var displaySetting = myDare.style.display;
+    console.log(displaySetting);
+   
+    if (displaySetting == 'block') {
+        myDare.style.display = 'none';
+        myDare.classList.add("hide");
+        myDare.classList.remove("show");     
+    }
+    else {
+        myDare.style.display = 'block';
+        myDare.classList.add("show");
+        myDare.classList.remove("hide");
+    }
+}
+
+function toggleGloomy() {
+    var myGloomy = document.getElementById('Gloomy');
+    var displaySetting = myGloomy.style.display;
+    console.log(displaySetting);
+   
+    if (displaySetting == 'block') {
+        myGloomy.style.display = 'none';
+        myGloomy.classList.add("hide");
+        myGloomy.classList.remove("show");     
+    }
+    else {
+        myGloomy.style.display = 'block';
+        myGloomy.classList.add("show");
+        myGloomy.classList.remove("hide");
+    }
+}
+
+function toggleExcited() {
+    var myExcited = document.getElementById('excited');
+    var displaySetting = myExcited.style.display;
+    console.log(displaySetting);
+   
+    if (displaySetting == 'block') {
+        myExcited.style.display = 'none';
+        myExcited.classList.add("hide");
+        myExcited.classList.remove("show");     
+    }
+    else {
+        myExcited.style.display = 'block';
+        myExcited.classList.add("show");
+        myExcited.classList.remove("hide");
+    }
+}
+
+function toggleCheerful() {
+    var myCheer = document.getElementById('cheerful');
+    var displaySetting = myCheer.style.display;
+    console.log(displaySetting);
+   
+    if (displaySetting == 'block') {
+        myCheer.style.display = 'none';
+        myCheer.classList.add("hide");
+        myCheer.classList.remove("show");     
+    }
+    else {
+        myCheer.style.display = 'block';
+        myCheer.classList.add("show");
+        myCheer.classList.remove("hide");
+    }
+}
+
+function toggleDate() {
+    var myDate = document.getElementById('date');
+    var displaySetting = myDate.style.display;
+    console.log(displaySetting);
+   
+    if (displaySetting == 'block') {
+        myDate.style.display = 'none';
+        myDate.classList.add("hide");
+        myDate.classList.remove("show");     
+    }
+    else {
+        myDate.style.display = 'block';
+        myDate.classList.add("show");
+        myDate.classList.remove("hide");
     }
 }
 
