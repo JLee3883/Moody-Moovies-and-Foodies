@@ -58,5 +58,8 @@ body {
   /* Show the dropdown menu (use JS to add this class to the .dropdown-content container when the user clicks on the dropdown button) */
   .show {display:block;}
 
+  .card {
+    border: 1px solid #CAD0D2;
+    border-radius: 4px;
 
 .hide {display: none;}
