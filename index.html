@@ -20,21 +20,23 @@
 
     <section class="dropdown">
         <button onclick="myFunction()" class="dropbtn">Choose Your Mood</button>
-        <div id="myDropdown" class="dropdown-cont">
-          <a href="#">Tense/Nervous</a>
-          <a href="#">Irritated/Annoyed</a>
-          <a href="#">Relaxed</a>
-          <a href="#">Dare Me</a>
-          <a href="#">Gloomy</a>
-          <a href="#">Excited/Lively/Energized</a>
-          <a href="#">Cheerful/Happy</a>
-          <a href="#">Date Night</a>
+
+        <div id="myDropdown" class="dropdown-cont   ">
+        <button onclick="toggletense()">Tense/Nervous</button> 
+          <a href="#irritated">Irritated/Annoyed</a>
+          <a href="#relaxed">Relaxed</a>
+          <a href="#dare">Dare Me</a>
+          <a href="#gloomy">Gloomy</a>
+          <a href="#excited">Excited/Lively/Energized</a>
+          <a href="#cheerful">Cheerful/Happy</a>
+          <a href="#date">Date Night</a>
+
         </div>
     </section>
 
     <section class="row">
-        <div class="col s8 m5 l4">
-          <div class="card">
+        <div class="col s8 m5 l4 hide" id="tense">
+          <div class="card" >
             <div class="card-image">
               <img src="assets/images/castleforchristmas.jpg">
               <span class="card-title"></span>
