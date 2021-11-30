@@ -33,6 +33,22 @@ let ingredient = [
   "cheesecake",
 ];
 
+fetch("https://tasty.p.rapidapi.com/recipes/detail?id=2270", {
+	"method": "GET",
+	"headers": {
+		"x-rapidapi-host": "tasty.p.rapidapi.com",
+		"x-rapidapi-key": "37816d4546mshf5f01f25973adcfp1288a4jsn17f269e6fcf8"
+	}
+})
+.then(response => {
+	return response.json()
+}) .then(response => {
+	console.log(response);
+})
+.catch(err => {
+	console.error(err);
+});
+
 // for (let x = 0; x < ingredient.length; ++x) {
 //   fetchRecipes(ingredient[x]);
 
