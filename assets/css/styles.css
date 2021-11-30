@@ -69,9 +69,10 @@ body {
 .hide {
     display: none;
 }
+
 .btn{
-  display:block;
-  background-image: none;
+    display:block;
+    background-image: none;
   border: none;
   cursor: pointer;
   margin: 10px; 
