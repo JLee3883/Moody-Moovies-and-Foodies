@@ -13,26 +13,21 @@
 // what data points are we going to keep? posters? details form the fetch request. how to render those in our html
 
 function toggleTense() {
-   
-        genreRequest("/chart/popular/genre/family","#movie1");
+    genreRequest("/chart/popular/genre/family","#movie1");
 
-        setTimeout(genreRequest("/chart/popular/genre/musical","#movie2"),1000);
+    setTimeout(genreRequest("/chart/popular/genre/musical","#movie2"),1000);
    
-        setTimeout(genreRequest("/chart/popular/genre/comedy","#movie3"),2000);
-      
-    
+    setTimeout(genreRequest("/chart/popular/genre/comedy","#movie3"),2000);   
     
 }
 
 function toggleIrritated() {
-        genreRequest("/chart/popular/genre/mystery","#movie1");
+    genreRequest("/chart/popular/genre/mystery","#movie1");
 
-        setTimeout(genreRequest("/chart/popular/genre/thriller","#movie2"),1000);
+    setTimeout(genreRequest("/chart/popular/genre/thriller","#movie2"),1000);
    
-        setTimeout(genreRequest("/chart/popular/genre/drama","#movie3"),2000);
+    setTimeout(genreRequest("/chart/popular/genre/drama","#movie3"),2000);
       
-    
-    
 }
 
 function toggleRelax() {
@@ -114,24 +109,11 @@ async function genreRequest(genre,id){
             var movieImage = document.createElement("img");
             movieImage.setAttribute("class", "cardImage");
             movieImage.setAttribute("src", response3.image.url);
-            var cardTitle = document.createElement("div");
-            cardTitle.setAttribute("class", cardTitle);
-            // // cardTitle.textContent = response3.title;
-            // // cardTitle.appendChild(title);
+            document.createElement("div");
             movieCardImage.appendChild(movieImage);
             movieCard.appendChild(movieCardImage);
             movieContainer.appendChild(movieCard);
 
-
-
-            // var movieTitle = response3.title
-            // console.log (movieTitle);
-            // var movieTitleEl = document.querySelector(".card-title");
-            // movieTitleEl.textContent = movieTitle
-            // // var movieImage = response3.image.url
-            // // console.log(movieImage);
-            // var movieImageEl = document.querySelector(".cardImage");
-            // movieImageEl.setAttribute("src", movieImage)
         })
         .catch(err => {
             console.error(err);
@@ -141,9 +123,6 @@ async function genreRequest(genre,id){
     console.error(err);
 });
 }
-
-
-
 
 // Only shows on the webpage 2 at a time. Will work on time delay process with bryan
 // genreRequest("/chart/popular/genre/family"); // Harry Potter and the Sorcerer's Stone
