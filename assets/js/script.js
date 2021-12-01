@@ -19,7 +19,6 @@ function toggleTense() {
    
     if (displaySetting == 'block') {
       myTense.style.display = 'none';
-    //   tenseButton.innerHTML = 'Show tense cards';
       myTense.classList.add("hide");
       myTense.classList.remove("show");     
     }
@@ -162,9 +161,6 @@ function toggleTense() {
 //     }
 // }
 
-
-
-
 async function genreRequest(genre){
     await $.ajax("https://imdb8.p.rapidapi.com/title/get-popular-movies-by-genre?genre=" + genre, {
     "method": "GET",
@@ -186,14 +182,32 @@ async function genreRequest(genre){
         })
         .then(response3 => {
             console.log(response3);
-            var movieTitle = response3.title
-            console.log (movieTitle);
-            var movieTitleEl = document.querySelector(".card-title");
-            movieTitleEl.textContent = movieTitle
-            var movieImage = response3.image.url
-            console.log(movieImage);
-            var movieImageEl = document.querySelector(".cardImage");
-            movieImageEl.setAttribute("src", movieImage)
+            var movieContainer = document.querySelector("#tense");
+            var movieCard = document.createElement("div");
+            movieCard.setAttribute("class", "card");
+            var movieCardImage = document.createElement("div");
+            movieCardImage.setAttribute("class", "card-image");
+            var movieImage = document.createElement("img");
+            movieImage.setAttribute("class", "cardImage");
+            movieImage.setAttribute("src", response3.image.url);
+            var cardTitle = document.createElement("div");
+            cardTitle.setAttribute("class", cardTitle);
+            // // cardTitle.textContent = response3.title;
+            // // cardTitle.appendChild(title);
+            movieCardImage.appendChild(movieImage);
+            movieCard.appendChild(movieCardImage);
+            movieContainer.appendChild(movieCard);
+
+
+
+            // var movieTitle = response3.title
+            // console.log (movieTitle);
+            // var movieTitleEl = document.querySelector(".card-title");
+            // movieTitleEl.textContent = movieTitle
+            // // var movieImage = response3.image.url
+            // // console.log(movieImage);
+            // var movieImageEl = document.querySelector(".cardImage");
+            // movieImageEl.setAttribute("src", movieImage)
         })
         .catch(err => {
             console.error(err);
@@ -203,6 +217,8 @@ async function genreRequest(genre){
     console.error(err);
 });
 }
+
+
 
 
 // Only shows on the webpage 2 at a time. Will work on time delay process with bryan
@@ -221,91 +237,5 @@ async function genreRequest(genre){
 // genreRequest("/chart/popular/genre/adventure"); //Encanto
 // genreRequest("/chart/popular/genre/romance"); //a castle for christmas
 
-// var genre = "/chart/popular/genre/comedy";
 
-//     $.ajax("https://imdb8.p.rapidapi.com/title/get-popular-movies-by-genre?genre=" + genre, {
-//     "method": "GET",
-//     "headers": {
-//     "x-rapidapi-host": "imdb8.p.rapidapi.com",
-//     "x-rapidapi-key": "6367609f03mshe6a3e9c1f4e6ba0p12185cjsn01a783ae2181"
-//     }
-//     })
-//     .then(response2 => {
-//     console.log(response2[0]);
-
-//         let title = response2[8].split("/")
-//         $.ajax("https://imdb8.p.rapidapi.com/title/get-details?tconst="+ title[2] +"&limit=25&region=US", {
-//             "method": "GET",
-//             "headers": {
-//             "x-rapidapi-host": "imdb8.p.rapidapi.com",
-//             "x-rapidapi-key": "6367609f03mshe6a3e9c1f4e6ba0p12185cjsn01a783ae2181"
-//             }
-//         })
-//         .then(response3 => {
-//             console.log(response3);
-
-//         })
-//         .catch(err => {
-//             console.error(err);
-//         });
-//     })
-
-
-//     var genre = "/chart/popular/genre/thriller";
-
-//     $.ajax("https://imdb8.p.rapidapi.com/title/get-popular-movies-by-genre?genre=" + genre, {
-//     "method": "GET",
-//     "headers": {
-//     "x-rapidapi-host": "imdb8.p.rapidapi.com",
-//     "x-rapidapi-key": "6367609f03mshe6a3e9c1f4e6ba0p12185cjsn01a783ae2181"
-//     }
-//     })
-//     .then(response2 => {
-//     console.log(response2[0]);
-
-//         let title = response2[8].split("/")
-//         $.ajax("https://imdb8.p.rapidapi.com/title/get-details?tconst="+ title[2] +"&limit=25&region=US", {
-//             "method": "GET",
-//             "headers": {
-//             "x-rapidapi-host": "imdb8.p.rapidapi.com",
-//             "x-rapidapi-key": "6367609f03mshe6a3e9c1f4e6ba0p12185cjsn01a783ae2181"
-//             }
-//         })
-//         .then(response3 => {
-//             console.log(response3);
-
-//         })
-//         .catch(err => {
-//             console.error(err);
-//         });
-//     })
-
-//     var genre = "/chart/popular/genre/mystery";
-
-//     $.ajax("https://imdb8.p.rapidapi.com/title/get-popular-movies-by-genre?genre=" + genre, {
-//     "method": "GET",
-//     "headers": {
-//     "x-rapidapi-host": "imdb8.p.rapidapi.com",
-//     "x-rapidapi-key": "6367609f03mshe6a3e9c1f4e6ba0p12185cjsn01a783ae2181"
-//     }
-//     })
-//     .then(response2 => {
-//     console.log(response2[0]);
-
-//         let title = response2[8].split("/")
-//         $.ajax("https://imdb8.p.rapidapi.com/title/get-details?tconst="+ title[2] +"&limit=25&region=US", {
-//             "method": "GET",
-//             "headers": {
-//             "x-rapidapi-host": "imdb8.p.rapidapi.com",
-//             "x-rapidapi-key": "6367609f03mshe6a3e9c1f4e6ba0p12185cjsn01a783ae2181"
-//             }
-//         })
-//         .then(response3 => {
-//             console.log(response3);
-
-//         })
-//         .catch(err => {
-//             console.error(err);
-//         });
-//     })
 
