@@ -13,155 +13,77 @@
 // what data points are we going to keep? posters? details form the fetch request. how to render those in our html
 
 function toggleTense() {
-    var myTense = document.getElementById('tense');
-    var displaySetting = myTense.style.display;
-    console.log(displaySetting);
    
-    if (displaySetting == 'block') {
-      myTense.style.display = 'none';
-      myTense.classList.add("hide");
-      myTense.classList.remove("show");     
-    }
-    else {
-        genreRequest("/chart/popular/genre/family");
-        myTense.style.display = 'block';
-        myTense.classList.add("show");
-        myTense.classList.remove("hide");
-        genreRequest("/chart/popular/genre/musical");
-        myTense.style.display = 'block';
-        myTense.classList.add("show");
-        myTense.classList.remove("hide");
-        genreRequest("/chart/popular/genre/comedy");
-        myTense.style.display = 'block';
-        myTense.classList.add("show");
-        myTense.classList.remove("hide");
+        genreRequest("/chart/popular/genre/family","#movie1");
+
+        setTimeout(genreRequest("/chart/popular/genre/musical","#movie2"),1000);
+   
+        setTimeout(genreRequest("/chart/popular/genre/comedy","#movie3"),2000);
+      
     
-    }
+    
 }
 
-// function toggleIrritated() {
-//     var myIrritate = document.getElementById('irritated');
-//     var displaySetting = myIrritate.style.display;
-//     console.log(displaySetting);
+function toggleIrritated() {
+        genreRequest("/chart/popular/genre/mystery","#movie1");
+
+        setTimeout(genreRequest("/chart/popular/genre/thriller","#movie2"),1000);
    
-//     if (displaySetting == 'block') {
-//         myIrritate.style.display = 'none';
-//         myIrritate.classList.add("hide");
-//         myIrritate.classList.remove("show");     
-//     }
-//     else {
-            // genreRequest("/chart/popular/genre/family");
-//          myIrritate.style.display = 'block';
-//          myIrritate.classList.add("show");
-//          myIrritate.classList.remove("hide");
+        setTimeout(genreRequest("/chart/popular/genre/drama","#movie3"),2000);
+      
     
-//     }
-// }
+    
+}
 
-// function toggleRelax() {
-//     var myRelax = document.getElementById('relax');
-//     var displaySetting = myRelax.style.display;
-//     console.log(displaySetting);
-   
-//     if (displaySetting == 'block') {
-//         myRelax.style.display = 'none';
-//         myRelax.classList.add("hide");
-//         myRelax.classList.remove("show");     
-//     }
-//     else {
-//         myRelax.style.display = 'block';
-//         myRelax.classList.add("show");
-//         myRelax.classList.remove("hide");
+function toggleRelax() {
+    genreRequest("/chart/popular/genre/comedy","#movie1");
 
-//     }
-// }
+    setTimeout(genreRequest("/chart/popular/genre/fantasy","#movie2"),1000);
 
-// function toggleDare() {
-//     var myDare = document.getElementById('dare');
-//     var displaySetting = myDare.style.display;
-//     console.log(displaySetting);
-   
-//     if (displaySetting == 'block') {
-//         myDare.style.display = 'none';
-//         myDare.classList.add("hide");
-//         myDare.classList.remove("show");     
-//     }
-//     else {
-//         myDare.style.display = 'block';
-//         myDare.classList.add("show");
-//         myDare.classList.remove("hide");
-//     }
-// }
+    setTimeout(genreRequest("/chart/popular/genre/history","#movie3"),2000);
+}
 
-// function toggleGloomy() {
-//     var myGloomy = document.getElementById('Gloomy');
-//     var displaySetting = myGloomy.style.display;
-//     console.log(displaySetting);
-   
-//     if (displaySetting == 'block') {
-//         myGloomy.style.display = 'none';
-//         myGloomy.classList.add("hide");
-//         myGloomy.classList.remove("show");     
-//     }
-//     else {
-//         myGloomy.style.display = 'block';
-//         myGloomy.classList.add("show");
-//         myGloomy.classList.remove("hide");
-//     }
-// }
+function toggleDare() {
+    genreRequest("/chart/popular/genre/horror","#movie1");
 
-// function toggleExcited() {
-//     var myExcited = document.getElementById('excited');
-//     var displaySetting = myExcited.style.display;
-//     console.log(displaySetting);
-   
-//     if (displaySetting == 'block') {
-//         myExcited.style.display = 'none';
-//         myExcited.classList.add("hide");
-//         myExcited.classList.remove("show");     
-//     }
-//     else {
-//         myExcited.style.display = 'block';
-//         myExcited.classList.add("show");
-//         myExcited.classList.remove("hide");
-//     }
-// }
+    setTimeout(genreRequest("/chart/popular/genre/thriller","#movie2"),1000);
 
-// function toggleCheerful() {
-//     var myCheer = document.getElementById('cheerful');
-//     var displaySetting = myCheer.style.display;
-//     console.log(displaySetting);
-   
-//     if (displaySetting == 'block') {
-//         myCheer.style.display = 'none';
-//         myCheer.classList.add("hide");
-//         myCheer.classList.remove("show");     
-//     }
-//     else {
-//         myCheer.style.display = 'block';
-//         myCheer.classList.add("show");
-//         myCheer.classList.remove("hide");
-//     }
-// }
+    setTimeout(genreRequest("/chart/popular/genre/mystery","#movie3"),2000);
+}
 
-// function toggleDate() {
-//     var myDate = document.getElementById('date');
-//     var displaySetting = myDate.style.display;
-//     console.log(displaySetting);
-   
-//     if (displaySetting == 'block') {
-//         myDate.style.display = 'none';
-//         myDate.classList.add("hide");
-//         myDate.classList.remove("show");     
-//     }
-//     else {
-//         myDate.style.display = 'block';
-//         myDate.classList.add("show");
-//         myDate.classList.remove("hide");
-//     }
-// }
+function toggleGloomy() {
+    genreRequest("/chart/popular/genre/sci-fi","#movie1");
 
-async function genreRequest(genre){
+    setTimeout(genreRequest("/chart/popular/genre/mystery","#movie2"),1000);
+
+    setTimeout(genreRequest("/chart/popular/genre/musical","#movie3"),2000);
+}
+
+function toggleExcited() {
+    genreRequest("/chart/popular/genre/action","#movie1");
+
+    setTimeout(genreRequest("/chart/popular/genre/musical","#movie2"),1000);
+
+    setTimeout(genreRequest("/chart/popular/genre/mystery","#movie3"),2000);
+}
+
+function toggleCheerful() {
+    genreRequest("/chart/popular/genre/comedy","#movie1");
+
+    setTimeout(genreRequest("/chart/popular/genre/animation","#movie2"),1000);
+
+    setTimeout(genreRequest("/chart/popular/genre/adventure","#movie3"),2000);
+}
+
+function toggleDate() {
+    genreRequest("/chart/popular/genre/romance","#movie1");
+
+    setTimeout(genreRequest("/chart/popular/genre/drama","#movie2"),1000);
+
+    setTimeout(genreRequest("/chart/popular/genre/horror","#movie3"),2000);
+}
+
+async function genreRequest(genre,id){
     await $.ajax("https://imdb8.p.rapidapi.com/title/get-popular-movies-by-genre?genre=" + genre, {
     "method": "GET",
     "headers": {
@@ -182,7 +104,9 @@ async function genreRequest(genre){
         })
         .then(response3 => {
             console.log(response3);
-            var movieContainer = document.querySelector("#tense");
+            console.log(id);
+            var movieContainer = document.querySelector(id);
+            movieContainer.innerHTML= "";
             var movieCard = document.createElement("div");
             movieCard.setAttribute("class", "card");
             var movieCardImage = document.createElement("div");
