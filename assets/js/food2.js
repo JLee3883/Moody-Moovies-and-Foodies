@@ -1,43 +1,57 @@
 
-/* Drop Down Menu for Moods*/
-function myFunction() {
-  document.getElementById("myDropdown").classList.toggle("show");
-}
 
-// Dropdown menu closes if user clicks outside of it
-window.onclick = function(event) {
-  if (!event.target.matches('.dropbtn')) {
-    var dropdowns = document.getElementsByClassName("dropdown-cont");
-    var i;
-    for (i = 0; i < dropdowns.length; i++) {
-      var openDropdown = dropdowns[i];
-      if (openDropdown.classList.contains('show')) {
-        openDropdown.classList.remove('show');
-      }
-    }
-  }
-}
 
-let ingredient = [
-  "oatmeal",
-  "seafood pasta",
-  "chocolate",
-  "chicken",
-  "kale",
-  "lemon dessert",
-  "pizza",
-  // "meatballs",
-  "banana split",
-  "lobster",
-  "steak",
-  "cheesecake",
-];
+// async function recipeRequest(recipe,id){
+//   await $.ajax("https://tasty.p.rapidapi.com/recipes/detail?&=&id=" + recipe, {
+//   "method": "GET",
+//   "headers": {
+//   "x-rapidapi-host": "tasty.p.rapidapi.com",
+//   "x-rapidapi-key": "6367609f03mshe6a3e9c1f4e6ba0p12185cjsn01a783ae2181"
+//   }
+//   })
+//   .then(async response2 => {
+//   console.log(response2[0]);
+
+//       let title = response2[8].split("/")
+//       await $.ajax("https://tasty.p.rapidapi.com/recipes/detail?&=&id="+ title[2] +"&limit=25&region=US", {
+//           "method": "GET",
+//           "headers": {
+//           "x-rapidapi-host": "tasty.p.rapidapi.com",
+//           "x-rapidapi-key": "6367609f03mshe6a3e9c1f4e6ba0p12185cjsn01a783ae2181"
+//           }
+//       })
+//       .then(response3 => {
+//           console.log(response3);
+//           console.log(id);
+//           var recipeContainer = document.querySelector(id);
+//           recipeContainer.innerHTML= "";
+//           var recipeCard = document.createElement("div");
+//           recipeCard.setAttribute("class", "card");
+//           var recipeCardImage = document.createElement("div");
+//           recipeCardImage.setAttribute("class", "card-image");
+//           var recipeImage = document.createElement("src");
+//           recipeImage.setAttribute("class", "cardsrc");
+//           recipeImage.setAttribute("src", response3.original_video_url);
+//           document.createElement("div");
+//           recipeCardsrc.appendChild(recipeImage);
+//           recipeCard.appendChild(recipeCardImage);
+//           recipeContainer.appendChild(recipeCard);
+
+//       })
+//       .catch(err => {
+//           console.error(err);
+//       });
+//   })
+//   .catch(err => {
+//   console.error(err);
+// });
+// }
 
 // fetch("https://tasty.p.rapidapi.com/recipes/detail?id=2270", {
 // 	"method": "GET",
 // 	"headers": {
 // 		"x-rapidapi-host": "tasty.p.rapidapi.com",
-// 		"x-rapidapi-key": "37816d4546mshf5f01f25973adcfp1288a4jsn17f269e6fcf8"
+// 		"x-rapidapi-key": "6367609f03mshe6a3e9c1f4e6ba0p12185cjsn01a783ae2181"
 // 	}
 // })
 // .then(response => {
