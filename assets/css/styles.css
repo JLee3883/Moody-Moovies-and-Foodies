@@ -22,7 +22,12 @@ body {
     border: none;
     cursor: pointer;
 }
-  
+.btn {
+    background-color: rgb(65, 58, 58);
+}
+.btn:hover {
+    background-color: red;
+}
   /* Dropdown button on hover & focus */
 .dropbtn:hover, .dropbtn:focus {
     background-color: black;
@@ -69,10 +74,9 @@ body {
 .hide {
     display: none;
 }
-
 .btn{
-    display:block;
-    background-image: none;
+  display:block;
+  background-image: none;
   border: none;
   cursor: pointer;
   margin: 10px; 
