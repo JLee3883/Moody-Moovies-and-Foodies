@@ -20,7 +20,8 @@ As a user, I can select my current mood and favorite dish from the drop-down lis
 *Must be interactive (i.e: accept and respond to user input)
 
 # Deployed Application Screenshots 
-
+![Screenshot1](assets/images/moodypage1.png)
+![Screenshot2](assets/images/moodypage2.png)
 
 # Technologies Used
 *HTML
