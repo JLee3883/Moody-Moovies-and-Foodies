@@ -41,82 +41,82 @@ function toggleTense() {
 
 
   genreRequest("/chart/popular/genre/family", "#movie1");
-  genreRequest("/chart/popular/genre/musical", "#movie2");
-  genreRequest("/chart/popular/genre/comedy", "#movie3");
+  setTimeout(genreRequest("/chart/popular/genre/musical", "#movie2"),1000);
+  setTimeout(genreRequest("/chart/popular/genre/comedy", "#movie3"),2000);
 
-  recipeRequest("id=7569", "#recipe1");//curry
-  recipeRequest("id=7740", "#recipe2");
-  recipeRequest("id=767", "#recipe3");
+  setTimeout(recipeRequest("id=7569", "#recipe1"),3000);
+  setTimeout(recipeRequest("id=7740", "#recipe2"),4000);
+  setTimeout(recipeRequest("id=767", "#recipe3"),5000);
 }
 
 function toggleIrritated() {
   genreRequest("/chart/popular/genre/mystery", "#movie1");
-  genreRequest("/chart/popular/genre/thriller", "#movie2");
+  setTimeout(genreRequest("/chart/popular/genre/thriller", "#movie2"),1000);
   setTimeout(genreRequest("/chart/popular/genre/drama","#movie3"),2000);
 
-  recipeRequest("id=7217", "#recipe1");
-  recipeRequest("id=3945", "#recipe2");
-  recipeRequest("id=5434", "#recipe3");
+  setTimeout(recipeRequest("id=7217", "#recipe1"),3000);
+  setTimeout(recipeRequest("id=3945", "#recipe2"),4000);
+  setTimeout(recipeRequest("id=5434", "#recipe3"),5000);
 }
 
 function toggleRelax() {
   genreRequest("/chart/popular/genre/comedy", "#movie1");
-  genreRequest("/chart/popular/genre/fantasy", "#movie2");
-  genreRequest("/chart/popular/genre/history", "#movie3");
+  setTimeout(genreRequest("/chart/popular/genre/fantasy", "#movie2"),1000);
+  setTimeout(genreRequest("/chart/popular/genre/history", "#movie3"),2000);
 
-  recipeRequest("id=3076", "#recipe1");
-  recipeRequest("id=7954", "#recipe2");
-  recipeRequest("id=4714", "#recipe3");
+  setTimeout(recipeRequest("id=3076", "#recipe1"),3000);
+  setTimeout(recipeRequest("id=7954", "#recipe2"),4000);
+  setTimeout(recipeRequest("id=4714", "#recipe3"),5000);
 }
 
 function toggleDare() {
   genreRequest("/chart/popular/genre/horror", "#movie1");
-  genreRequest("/chart/popular/genre/thriller", "#movie2");
-  genreRequest("/chart/popular/genre/mystery", "#movie3");
+  setTimeout(genreRequest("/chart/popular/genre/thriller", "#movie2"),1000);
+  setTimeout(genreRequest("/chart/popular/genre/mystery", "#movie3"),2000);
 
-  recipeRequest("id=7658", "#recipe1");
-  recipeRequest("id=7911", "#recipe2");//spicy
-  recipeRequest("id=1749", "#recipe3");//spicy
+  setTimeout(recipeRequest("id=7658", "#recipe1"),3000);
+  setTimeout(recipeRequest("id=7911", "#recipe2"),4000);
+  setTimeout(recipeRequest("id=1749", "#recipe3"),5000);
 }
 
 function toggleGloomy() {
   genreRequest("/chart/popular/genre/sci-fi", "#movie1");
-  genreRequest("/chart/popular/genre/mystery", "#movie2");
-  genreRequest("/chart/popular/genre/musical", "#movie3");
+  setTimeout(genreRequest("/chart/popular/genre/mystery", "#movie2"),1000);
+  setTimeout(genreRequest("/chart/popular/genre/musical", "#movie3"),2000);
 
   recipeRequest("id=7724", "#recipe1");
-  recipeRequest("id=4714", "#recipe2");
-  recipeRequest("id=767", "#recipe3");
+  setTimeout(recipeRequest("id=4714", "#recipe2"),1000);
+  setTimeout(recipeRequest("id=767", "#recipe3"),2000);
 }
 
 function toggleExcited() {
   genreRequest("/chart/popular/genre/action", "#movie1");
-  genreRequest("/chart/popular/genre/musical", "#movie2");
-  genreRequest("/chart/popular/genre/mystery", "#movie3");
+  setTimeout(genreRequest("/chart/popular/genre/musical", "#movie2"),1000);
+  setTimeout(genreRequest("/chart/popular/genre/mystery", "#movie3"),2000);
 
-  recipeRequest("id=2437", "#recipe1");
-  recipeRequest("id=7459", "#recipe2");
-  recipeRequest("id=2373", "#recipe3");//lemon dessert
+  setTimeout(recipeRequest("id=2437", "#recipe1"),3000);
+  setTimeout(recipeRequest("id=7459", "#recipe2"),4000);
+  setTimeout(recipeRequest("id=2373", "#recipe3"),5000);
 }
 
 function toggleCheerful() {
   genreRequest("/chart/popular/genre/comedy", "#movie1");
-  genreRequest("/chart/popular/genre/animation", "#movie2");
-  genreRequest("/chart/popular/genre/adventure", "#movie3");
+  setTimeout(genreRequest("/chart/popular/genre/animation", "#movie2"),1000);
+  setTimeout(genreRequest("/chart/popular/genre/adventure", "#movie3"),2000);
 
-  recipeRequest("id=7577", "#recipe1");
-  recipeRequest("id=2270", "#recipe2");
-  recipeRequest("id=1928", "#recipe3");//banana split
+  setTimeout(recipeRequest("id=7577", "#recipe1"),3000);
+  setTimeout(recipeRequest("id=2270", "#recipe2"),4000);
+  setTimeout(recipeRequest("id=1928", "#recipe3"),5000);
 }
 
 function toggleDate() {
   genreRequest("/chart/popular/genre/romance", "#movie1");
-  genreRequest("/chart/popular/genre/drama", "#movie2");
-  genreRequest("/chart/popular/genre/horror", "#movie3");
+  setTimeout(genreRequest("/chart/popular/genre/drama", "#movie2"),1000);
+  setTimeout(genreRequest("/chart/popular/genre/horror", "#movie3"),2000);
 
-  recipeRequest("id=7754", "#recipe1");//lobster
-  recipeRequest("id=4265", "#recipe2");//steak
-  recipeRequest("id=767", "#recipe3");
+  setTimeout(recipeRequest("id=7754", "#recipe1"),3000);
+  setTimeout(recipeRequest("id=4265", "#recipe2"),4000);
+  setTimeout(recipeRequest("id=767", "#recipe3"),5000);
 }
 
 async function movieRequest(id) {
@@ -126,13 +126,14 @@ async function movieRequest(id) {
       "&limit=25&region=US",
     {
       method: "GET",
-      headers: {
+      "headers": {
         "x-rapidapi-host": "imdb8.p.rapidapi.com",
-        "x-rapidapi-key": "6367609f03mshe6a3e9c1f4e6ba0p12185cjsn01a783ae2181",
+        "x-rapidapi-key": "c42eae7b2cmsh750d50eba408ed7p11ee89jsnc15d45c7e348"
       },
     }
   )
     .then((response3) => {
+      movieContainer.innerHTML= "";
       if (numMovies % 3 == 0) {
         // Add new row after every 3 movies
         parent = document.createElement("div");
@@ -148,7 +149,7 @@ async function movieRequest(id) {
       let movieImage = document.createElement("img");
       movieImage.setAttribute("class", "cardImage");
       movieImage.setAttribute("width", "100%");
-      movieImage.setAttribute("height", "750px");
+      movieImage.setAttribute("height", "700px");
       movieImage.setAttribute("src", response3.image.url);
       movieCardImage.appendChild(movieImage);
       movieCard.appendChild(movieCardImage);
@@ -166,9 +167,9 @@ async function genreRequest(genre, id) {
       genre,
     {
       method: "GET",
-      headers: {
+      "headers": {
         "x-rapidapi-host": "imdb8.p.rapidapi.com",
-        "x-rapidapi-key": "6367609f03mshe6a3e9c1f4e6ba0p12185cjsn01a783ae2181",
+        "x-rapidapi-key": "c42eae7b2cmsh750d50eba408ed7p11ee89jsnc15d45c7e348"
       },
     }
   )
@@ -190,7 +191,7 @@ async function recipeRequest(name) {
     method: "GET",
     headers: {
       "x-rapidapi-host": "tasty.p.rapidapi.com",
-      "x-rapidapi-key": "2fd256b7eamsh398f55bc9d76f1dp1ede28jsnaaaff957db6c",
+      "x-rapidapi-key": "8ffd04e6c8mshac9e017c999bcf8p12642ajsn9d42f73d1957",
     },
   })
     .then(async (response2) => {
