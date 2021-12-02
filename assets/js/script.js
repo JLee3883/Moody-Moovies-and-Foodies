@@ -18,11 +18,12 @@ function myFunction() {
 }
 
 function toggleTense() {
-    // genreRequest("/chart/popular/genre/family","#movie1");
+    genreRequest("/chart/popular/genre/family","#movie1");
     // setTimeout(genreRequest("/chart/popular/genre/musical","#movie2"),1000);
     // setTimeout(genreRequest("/chart/popular/genre/comedy","#movie3"),2000);  
     
-    recipeRequest("recipes/detail?id=7577");
+    recipeRequest("id=7577","#recipe1");
+
     
 }
 
@@ -83,51 +84,51 @@ function toggleTense() {
 //     setTimeout(genreRequest("/chart/popular/genre/horror","#movie3"),2000);
 // }
 
-// async function genreRequest(genre,id){
-//     await $.ajax("https://imdb8.p.rapidapi.com/title/get-popular-movies-by-genre?genre=" + genre, {
-//     "method": "GET",
-//     "headers": {
-//     "x-rapidapi-host": "imdb8.p.rapidapi.com",
-//     "x-rapidapi-key": "6367609f03mshe6a3e9c1f4e6ba0p12185cjsn01a783ae2181"
-//     }
-//     })
-//     .then(async response2 => {
-//     console.log(response2[0]);
+async function genreRequest(genre,id){
+    await $.ajax("https://imdb8.p.rapidapi.com/title/get-popular-movies-by-genre?genre=" + genre, {
+    "method": "GET",
+    "headers": {
+    "x-rapidapi-host": "imdb8.p.rapidapi.com",
+    "x-rapidapi-key": "6367609f03mshe6a3e9c1f4e6ba0p12185cjsn01a783ae2181"
+    }
+    })
+    .then(async response2 => {
+    console.log(response2[0]);
 
-//         let title = response2[8].split("/")
-//         await $.ajax("https://imdb8.p.rapidapi.com/title/get-details?tconst="+ title[2] +"&limit=25&region=US", {
-//             "method": "GET",
-//             "headers": {
-//             "x-rapidapi-host": "imdb8.p.rapidapi.com",
-//             "x-rapidapi-key": "6367609f03mshe6a3e9c1f4e6ba0p12185cjsn01a783ae2181"
-//             }
-//         })
-//         .then(response3 => {
-//             console.log(response3);
-//             console.log(id);
-//             var movieContainer = document.querySelector(id);
-//             movieContainer.innerHTML= "";
-//             var movieCard = document.createElement("div");
-//             movieCard.setAttribute("class", "card");
-//             var movieCardImage = document.createElement("div");
-//             movieCardImage.setAttribute("class", "card-image");
-//             var movieImage = document.createElement("img");
-//             movieImage.setAttribute("class", "cardImage");
-//             movieImage.setAttribute("src", response3.image.url);
-//             document.createElement("div");
-//             movieCardImage.appendChild(movieImage);
-//             movieCard.appendChild(movieCardImage);
-//             movieContainer.appendChild(movieCard);
+        let title = response2[8].split("/")
+        await $.ajax("https://imdb8.p.rapidapi.com/title/get-details?tconst="+ title[2] +"&limit=25&region=US", {
+            "method": "GET",
+            "headers": {
+            "x-rapidapi-host": "imdb8.p.rapidapi.com",
+            "x-rapidapi-key": "6367609f03mshe6a3e9c1f4e6ba0p12185cjsn01a783ae2181"
+            }
+        })
+        .then(response3 => {
+            console.log(response3);
+            console.log(id);
+            var movieContainer = document.querySelector(id);
+            movieContainer.innerHTML= "";
+            var movieCard = document.createElement("div");
+            movieCard.setAttribute("class", "card");
+            var movieCardImage = document.createElement("div");
+            movieCardImage.setAttribute("class", "card-image");
+            var movieImage = document.createElement("img");
+            movieImage.setAttribute("class", "cardImage");
+            movieImage.setAttribute("src", response3.image.url);
+            document.createElement("div");
+            movieCardImage.appendChild(movieImage);
+            movieCard.appendChild(movieCardImage);
+            movieContainer.appendChild(movieCard);
 
-//         })
-//         .catch(err => {
-//             console.error(err);
-//         });
-//     })
-//     .catch(err => {
-//     console.error(err);
-// });
-// }
+        })
+        .catch(err => {
+            console.error(err);
+        });
+    })
+    .catch(err => {
+    console.error(err);
+});
+}
 
 async function recipeRequest(name){
   await fetch("https://tasty.p.rapidapi.com/recipes/detail?" + name, {
@@ -142,70 +143,73 @@ async function recipeRequest(name){
       console.log(response2[0]);
     })
 
-    //   let name = response2[8].split("/")
-    //   await $.ajax("https://tasty.p.rapidapi.com/recipes/detail?&=&id="+ name[2],{
-    //       "method": "GET",
-    //       "headers": {
-    //       "x-rapidapi-host": "tasty.p.rapidapi.com",
-    //       "x-rapidapi-key": "6367609f03mshe6a3e9c1f4e6ba0p12185cjsn01a783ae2181"
-    //       }
-    //   })
+//     //   let name = response2[8].split("/")
+//     //   await $.ajax("https://tasty.p.rapidapi.com/recipes/detail?&=&id="+ name[2],{
+//     //       "method": "GET",
+//     //       "headers": {
+//     //       "x-rapidapi-host": "tasty.p.rapidapi.com",
+//     //       "x-rapidapi-key": "6367609f03mshe6a3e9c1f4e6ba0p12185cjsn01a783ae2181"
+//     //       }
+//     //   })
 
-    // "<img src="+ recipe.thumbnail_url + " /> ";
+//     // "<img src="+ recipe.thumbnail_url + " /> ";
       .then(response3 => {
-          console.log(response3.results);
+        //   console.log(response3.results);
           var recipeContainer = document.querySelector("#recipeWrapper");
           recipeContainer.innerHTML= "";
-          const recipe = response3.results[0];
-         console.log (recipe);
+          const recipe = response3.results;
+//         //  console.log (recipe);
       var recipeCard = document.createElement("div");
       recipeCard.setAttribute("class", "card");
       var recipeCardImage = document.createElement("div");
       recipeCardImage.setAttribute("class", "card-image");
       var recipeImage = document.createElement("img");
       recipeImage.setAttribute("class", "cardImage");
-      recipeImage.setAttribute("src", recipe.thumbnail_url);
+      recipeImage.setAttribute("src", response3.thumbnail_url);
     //   document.createElement("div");
       recipeCardImage.appendChild(recipeImage);
       recipeCard.appendChild(recipeCardImage);
-      recipeContainer.appendChild(recipeCard);;
+      recipeContainer.appendChild(recipeCard);
 
-         for (let i = 0; i < response3.results[0].instructions.length; i++) {
-             const recipe = response3.results[0].instructions [i].display_text;
-             console.log (recipe);
-             var display_text = document.createElement("p");
-             display_text.textContent = recipe;
-             recipeContainer.appendChild(display_text);
-        //   var recipeCard = document.createElement("div");
-        //   recipeCard.setAttribute("class", "card");
-        //   var recipeCardImage = document.createElement("div");
-        //   recipeCardImage.setAttribute("class", "card-image");
-        //   var recipeImage = document.createElement("img");
-        //   recipeImage.setAttribute("class", "cardImage");
-        //   recipeImage.setAttribute("src", recipe.thumbnail_url);
-        // //   document.createElement("div");
-        //   recipeCardImage.appendChild(recipeImage);
-        //   recipeCard.appendChild(recipeCardImage);
-        //   recipeContainer.appendChild(recipeCard);;
+    }
+      )}
+
+//         //  for (let i = name; i < response3.results[name].instructions.length; i++) {
+//         //      const recipe = response3.results[0].instructions [i].display_text;
+//         //      console.log (recipe);
+//         //      var display_text = document.createElement("p");
+//         //      display_text.textContent = recipe;
+//         //      recipeContainer.appendChild(display_text);
+//         //   var recipeCard = document.createElement("div");
+//         //   recipeCard.setAttribute("class", "card");
+//         //   var recipeCardImage = document.createElement("div");
+//         //   recipeCardImage.setAttribute("class", "card-image");
+//         //   var recipeImage = document.createElement("img");
+//         //   recipeImage.setAttribute("class", "cardImage");
+//         //   recipeImage.setAttribute("src", recipe.thumbnail_url);
+//         // //   document.createElement("div");
+//         //   recipeCardImage.appendChild(recipeImage);
+//         //   recipeCard.appendChild(recipeCardImage);
+//         //   recipeContainer.appendChild(recipeCard);;
 
              
-         }
-         
+//       } )
+          
 
 
 
 
-          console.log(name);
+//         //   console.log(name);
         
 
-      })
+//       }
     //   .catch(err => {
     //       console.error(err);
     //   });
 //   .catch(err => {
 //   console.error(err);
 // });
-}
+// }
 
 // fetch("https://tasty.p.rapidapi.com/recipes/detail?id=2270", {
 // 	"method": "GET",
