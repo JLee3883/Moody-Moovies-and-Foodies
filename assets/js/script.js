@@ -154,24 +154,43 @@ async function recipeRequest(name){
     // "<img src="+ recipe.thumbnail_url + " /> ";
       .then(response3 => {
           console.log(response3.results);
-         for (let i = 0; i < response3.results.length; i++) {
-             const recipe = response3.results[i];
-             var recipeContainer = document.querySelector("#recipeWrapper");
+          var recipeContainer = document.querySelector("#recipeWrapper");
           recipeContainer.innerHTML= "";
+          const recipe = response3.results[0];
+         console.log (recipe);
+      var recipeCard = document.createElement("div");
+      recipeCard.setAttribute("class", "card");
+      var recipeCardImage = document.createElement("div");
+      recipeCardImage.setAttribute("class", "card-image");
+      var recipeImage = document.createElement("img");
+      recipeImage.setAttribute("class", "cardImage");
+      recipeImage.setAttribute("src", recipe.thumbnail_url);
+    //   document.createElement("div");
+      recipeCardImage.appendChild(recipeImage);
+      recipeCard.appendChild(recipeCardImage);
+      recipeContainer.appendChild(recipeCard);;
+
+         for (let i = 0; i < response3.results[0].instructions.length; i++) {
+             const recipe = response3.results[0].instructions [i].display_text;
+             console.log (recipe);
+             var display_text = document.createElement("p");
+             display_text.textContent = recipe;
+             recipeContainer.appendChild(display_text);
         //   var recipeCard = document.createElement("div");
         //   recipeCard.setAttribute("class", "card");
         //   var recipeCardImage = document.createElement("div");
         //   recipeCardImage.setAttribute("class", "card-image");
         //   var recipeImage = document.createElement("img");
         //   recipeImage.setAttribute("class", "cardImage");
-        //   recipeImage.setAttribute("img", recipe.thumbnail_url);
-        //   document.createElement("div");
+        //   recipeImage.setAttribute("src", recipe.thumbnail_url);
+        // //   document.createElement("div");
         //   recipeCardImage.appendChild(recipeImage);
         //   recipeCard.appendChild(recipeCardImage);
         //   recipeContainer.appendChild(recipeCard);;
 
              
          }
+         
 
 
 
