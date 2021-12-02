@@ -23,23 +23,6 @@ window.onclick = function (event) {
 };
 
 function toggleTense() {
-  // var myTense = document.getElementById('tense');
-  //   var displaySetting = myRelax.style.display;
-  //   console.log(displaySetting);
-
-  //   if (displaySetting == 'block') {
-  //       myRelax.style.display = 'none';
-  //       myRelax.classList.add("hide");
-  //       myRelax.classList.remove("show");     
-  //   }
-  //   else {
-  //       myRelax.style.display = 'block';
-  //       myRelax.classList.add("show");
-  //       myRelax.classList.remove("hide");
-
-  //   }
-
-
   genreRequest("/chart/popular/genre/family", "#movie1");
   setTimeout(genreRequest("/chart/popular/genre/musical", "#movie2"),1000);
   setTimeout(genreRequest("/chart/popular/genre/comedy", "#movie3"),2000);
@@ -133,7 +116,6 @@ async function movieRequest(id) {
     }
   )
     .then((response3) => {
-      movieContainer.innerHTML= "";
       if (numMovies % 3 == 0) {
         // Add new row after every 3 movies
         parent = document.createElement("div");
