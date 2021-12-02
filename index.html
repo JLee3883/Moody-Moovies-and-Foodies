@@ -6,21 +6,22 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
         <link rel="stylesheet" href="assets/css/styles.css" />
-
         <title>Moody Moovies & Foodies!</title>
-        
-    </head>
+        <link rel="icon" href="assets/images/popcorn.png" alt="popcorn logo"/>
 
+    </head>
+<!--Company image in top of page-->
     <header> 
         <img class="header-img" src= "assets/images/moodyheader.jpg"></img>
        
     </header>
    
 <body>
-
+<!--Dropdown button-->
     <section class="dropdown">
         <button onclick="myFunction()" class="dropbtn">What's your mood?</button>
         <div id="myDropdown" class="dropdown-cont">
+<!--Mood buttons in drop down-->
             <button class="btn" onclick="toggleTense()">Tense/Nervous</button> 
             <button class="btn" onclick="toggleIrritated()">Irritated/Annoyed</button> 
             <button class="btn" onclick="toggleRelax()">Relaxed</button> 
@@ -31,7 +32,7 @@
             <button class="btn" onclick="toggleDate()">Date Night</button>
         </div>
     </section>
-
+<!--Display three movie cards in a row -->
     <section class="row">
         <div class="col s6 m4 l4" id="movie2"></div> 
         <div class="col s6 m4 l4" id="movie1"></div>
