@@ -136,14 +136,13 @@ async function movieRequest(id) {
       movieCardImage.appendChild(movieImage);
       movieCard.appendChild(movieCardImage);
       parent.appendChild(movieCard);
-
-      
     })
     .catch((err) => {
     });
 }
 
 async function genreRequest(genre, id) {
+  movieWrapper.innerHTML = ""
   await $.ajax(
     "https://imdb8.p.rapidapi.com/title/get-popular-movies-by-genre?genre=" +
       genre,
