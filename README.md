@@ -1,5 +1,5 @@
 # Moody Moovies & Foodies
-~Movie and recipe recommendations based on YOUR mood~
+Movie and recipe recommendations based on YOUR mood
 
 For this project, we created an application that suggests movies and recipes based on your mood. As a group, we discussed what our common interests are and we found that we all enjoy watching movies and eating food! Often times, when we are presented with too many options, we feel overwhelmed. How many times have you opened Netflix and spent more time searching through movies than actually watching the movie?! We've all been there. Moody Moovies & Foodies presents you with three movie options and three recipes! These recipes were selected based on the ingredient properties and its effects on your mood. For example, if you are irritated or annoyed, the recipes we recommend have ingredients that are dopamine-building foods that help with anger management! Check out our site! Select your mood, recipe, movie, and enjoy your night!
 
